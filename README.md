@@ -1,10 +1,6 @@
-# Progressive Neural Networks
+# Progressive Neural Networks for Quantum Architecture Search
 
-This is the class project repo for ECE 239AS (Reinforcement Learning) Spring 2020 taught by Lin Yang.
-
-This project is an re-implementation of the [Progressive Neural Networks](https://arxiv.org/abs/1606.04671) proposed in 2016 by Google DeepMind in [PyTorch](https://github.com/pytorch/pytorch).
-
-Team members are: Gaohong Liu, Jintao Jiang, Hengda Shi
+Credit for original Progressive Neural Network code to [pnn](https://github.com/hengdashi/pnn).
 
 ## Setup
 
