@@ -36,6 +36,7 @@ if __name__ == "__main__":
 
     # for evaluation use
     allenvs = create_env(opt)
+    #print('allenvs: ', allenvs)
     # keep track of current column
     current = mp.Value('i', 0)
     gmodel = PNN(allenvs, current)
@@ -64,3 +65,7 @@ if __name__ == "__main__":
 
     for process in processes:
         process.join()
+
+
+    model_file = opt.save_path / "pnn"
+    torch.save(gmodel.state_dict(), model_file)

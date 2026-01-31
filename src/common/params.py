@@ -10,7 +10,7 @@ class Parameters:
         # environment set (options: pong, atari)
         self.envs = 'pong'
         # number of columns in PNN (default: 1)
-        self.ncolumns = 1
+        self.ncolumns = 3
         # learning rate (default: 1e-4)
         self.lr = 1e-4
         # discount factor for rewards (default: 0.99)
@@ -26,9 +26,9 @@ class Parameters:
         # number of local steps (default: 4)
         self.nlsteps = 20
         # number of global steps (default: 4e7)
-        self.ngsteps = 4e7
+        self.ngsteps = 1e5
         # number of processes (default: 16)
-        self.nprocesses = 16
+        self.nprocesses = 2
         # number of steps between saving (default: 500)
         self.interval = 500
         # maximum repetition steps in test phase (default: 100)
@@ -40,8 +40,8 @@ class Parameters:
         # saving path (default: trained_models)
         self.save_path = self.cwd / "trained_models"
         # load weight from previous trained stage (default: False)
-        self.load = False
+        self.load = True
         # whether to render the frames or not (default: False)
-        self.render = False
+        self.render = True
         # seed (default: 1)
         self.seed = 1

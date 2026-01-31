@@ -178,6 +178,7 @@ class PNN(nn.Module):
         for i, env in enumerate(allenvs):
             nchannels = env.observation_space.shape[0]
             nactions = env.action_space.n
+            # print("action: ", " " , nactions)
             self.columns.append(
                 PNNColumn(len(self.columns), nchannels, nactions))
             # freeze parameters that is not on first column
@@ -195,6 +196,7 @@ class PNN(nn.Module):
         for i in range(self.current + 1):
             h_critic, h_actor, out = self.columns[i](X, next_out)
             next_out.append(out)
+
 
         return h_critic, h_actor
 
