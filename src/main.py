@@ -41,9 +41,11 @@ if __name__ == "__main__":
     current = mp.Value('i', 0)
     gmodel = PNN(allenvs, current)
 
+    file_name = "pnn_ncolumns_" + str(opt.ncolumns)
+
     gmodel.share_memory()
     if opt.load:
-        file = opt.save_path / "pnn"
+        file = opt.save_path / file_name
         if file.exists() and file.is_file():
             gmodel.load_state_dict(torch.load(file))
 
@@ -67,5 +69,5 @@ if __name__ == "__main__":
         process.join()
 
 
-    model_file = opt.save_path / "pnn"
+    model_file = opt.save_path / file_name
     torch.save(gmodel.state_dict(), model_file)
